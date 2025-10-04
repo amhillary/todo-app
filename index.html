@@ -1,9 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>TODO</title>
-	</head>
-	<body></body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskStack</title>
+  </head>
+  <body>
+    <header>
+      <h1>TaskStack</h1>
+      <nav>
+        <ul>
+          <li><buttion class="filter-btn" data-filter="all">All</buttion></li>
+          <li>
+            <buttion class="filter-btn" data-filter="completed"
+              >Completed</buttion
+            >
+          </li>
+          <li>
+            <buttion class="filter-btn" data-filter="overdue">Overdue</buttion>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="actions-area">
+      <button id="add-task-btn">+ Add Task</button>
+    </div>
+    <div class="task-list">
+      <ul id="task-list"></ul>
+    </div>
+    <div id="modal-overlay">
+      <div class="modal-content">
+        <form>
+          <h2>Add a New Task</h2>
+          <label for="task-title">Task Title</label>
+          <input
+            type="text"
+            name="task-title"
+            id="task-title"
+            placeholder="Add a task title"
+          />
+          <label for="priority">Priority</label>
+          <select name="priority" id="priority">
+            <option value="">Select priority</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+          <label for="deadline">Deadline</label>
+          <input
+            type="date"
+            name="deadline"
+            id="deadline"
+            placeholder="Select Date"
+          />
+          <label for="comments">Comments</label>
+          <textarea
+            rows="5"
+            cols="33"
+            placeholder="Add any comments to your task"
+          ></textarea>
+          <button type="submit">Save Task</button>
+          <button type="button">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
