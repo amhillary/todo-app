@@ -4,31 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TaskStack</title>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header>
-      <h1>TaskStack</h1>
+      <div id="title-block">
+        <h1>TaskStack</h1>
+      </div>
       <nav>
         <ul>
-          <li><button class="filter-btn" data-filter="all">All</button></li>
           <li>
-            <button class="filter-btn" data-filter="completed">
+            <button class="active primary filter-btn" data-filter="all">
+              All
+            </button>
+          </li>
+          <li>
+            <button class="primary filter-btn" data-filter="completed">
               Completed
             </button>
           </li>
           <li>
-            <button class="filter-btn" data-filter="overdue">Overdue</button>
+            <button class="primary filter-btn" data-filter="overdue">
+              Overdue
+            </button>
           </li>
         </ul>
       </nav>
     </header>
     <div class="actions-area">
-      <button id="add-task-btn">+ Add Task</button>
+      <button class="primary" id="add-task-btn">+ Add Task</button>
     </div>
     <div class="task-list">
       <ul id="task-list"></ul>
     </div>
-    <div id="modal-overlay">
+    <div class="hidden" id="modal-overlay">
       <div class="modal-content">
         <form>
           <h2>Add a New Task</h2>
@@ -38,6 +47,7 @@
             name="task-title"
             id="task-title"
             placeholder="Add a task title"
+            required
           />
           <label for="priority">Priority</label>
           <select name="priority" id="priority">
@@ -56,12 +66,13 @@
           <label for="comments">Comments</label>
           <textarea
             id="comments"
+            name="comments"
             rows="5"
             cols="33"
             placeholder="Add any comments to your task"
           ></textarea>
-          <button type="submit">Save Task</button>
-          <button type="button">Cancel</button>
+          <button class="primary" type="submit">Save Task</button>
+          <button class="danger" type="button">Cancel</button>
         </form>
       </div>
     </div>
